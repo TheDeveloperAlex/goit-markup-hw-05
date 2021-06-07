@@ -18,49 +18,51 @@
 
 <body>
     <header class="header-nav">
-        <div class="container main-nav">
-            <!-- Логотип -->
-            <a href="./index.html" class="logo" lang="en"><span class="logo-beginning">Web</span>studio</a>
-            <!-- Навигация -->
-            <nav>
-                <ul class="site-nav">
-                    <li class="item"><a href="./index.html" class="nav nav-active">Студия</a></li>
-                    <li class="item"><a href="./portfolio.html" class="nav">Портфолио</a></li>
-                    <li class="item"><a href="" class="nav">Контакты</a></li>
+        <div class="main-box">
+                <div class="container main-nav">
+                <!-- Логотип -->
+                <a href="./index.html" class="logo" lang="en"><span class="logo-beginning">Web</span>studio</a>
+                <!-- Навигация -->
+                <nav>
+                    <ul class="site-nav">
+                        <li class="item"><a href="./index.html" class="nav nav-active">Студия</a></li>
+                        <li class="item"><a href="./portfolio.html" class="nav">Портфолио</a></li>
+                        <li class="item"><a href="" class="nav">Контакты</a></li>
+                    </ul>
+                </nav>
+                <ul class="contacts-nav">
+                    <li class="item">
+                        <a href="mailto:info@example.com" target="_blank" class="contacts">
+                            <svg class="contact-img-envelope">
+                                <use href="./img/sprite.svg#icon-envelope"></use>
+                            </svg>
+                            info@devstudio.com
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="tel:+380991111111" target="_blank" class="contacts contact-link-tel">
+                            <svg class="contact-img-tel">
+                                <use href="./img/sprite.svg#icon-tel"></use>
+                            </svg>
+                            +38 096 111 11 11
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-            <ul class="contacts-nav">
-                <li class="item">
-                    <a href="mailto:info@example.com" target="_blank" class="contacts">
-                        <svg class="contact-img-envelope">
-                            <use href="./img/sprite.svg#icon-envelope"></use>
-                        </svg>
-                        info@devstudio.com
-                    </a>
-                </li>
+            </div>
 
-                <li class="item">
-                    <a href="tel:+380991111111" target="_blank" class="contacts contact-link-tel">
-                        <svg class="contact-img-tel">
-                            <use href="./img/sprite.svg#icon-tel"></use>
-                        </svg>
-                        +38 096 111 11 11
-                    </a>
-                </li>
-            </ul>
         </div>
-
+        
     </header>
     <main>
         <!-- Герой -->
         <section class="  hero bg-img">
-            <!-- <div class="bg-img"> -->
             <div class="container">
                     <h1>Эффективные решения для вашего бизнеса</h1>
-                    <button type="button" class="button">Заказать услугу</button>
-                <!-- </div> -->
+                    <button  type="button" class="button" data-modal-open>Заказать услугу</button>
             </div>
         </section>
+        
         <section class="doing-section">
             <div class="container">
                 <!-- Наши преимущества -->
@@ -70,7 +72,7 @@
                     <li class="attention-item  ">
                         <div class="icon-box">
                             <svg class="attention-icon">
-                                <use href="./img/sprite.svg#icon-antenna"></use>
+                                <use href="./img/sprite.svg#icon-anten"></use>
                             </svg>
                         </div>
                         <div class="attention-describtion">
@@ -408,6 +410,16 @@
             </div>
         </div>
     </footer>
+    <div  class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="close-btn" data-modal-close>
+               <svg class="close-img">
+                   <use href="./img/sprite.svg#icon-close" ></use>
+               </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

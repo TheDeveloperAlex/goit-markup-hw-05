@@ -53,6 +53,10 @@ p {
   margin: 0px;
 }
 
+.main-box {
+  height: 80px;
+}
+
 .header-nav {
   border-bottom: 1px solid rgba(236, 236, 236, 1);
 }
@@ -108,7 +112,7 @@ p {
 .nav {
   display: block;
   padding-top: 32px;
-  padding-bottom: 32px;
+  /* padding-bottom: 32px;   */
 
   color: var(--header-color);
 
@@ -117,9 +121,34 @@ p {
   line-height: 1.1;
   letter-spacing: 0.02em;
 }
+
+.nav:hover::after {
+  opacity: 1;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+}
+
 .nav:hover,
 .nav:focus {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   color: var(--animation-color);
+}
+
+.nav::after {
+  content: '';
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(33, 150, 243, 1);
+  margin-top: 28px;
+  margin-bottom: 0px;
 }
 
 .nav-active {
@@ -142,6 +171,10 @@ p {
 
 .contacts:hover,
 .contacts:focus {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   color: var(--animation-color);
 }
 
@@ -158,6 +191,10 @@ p {
 
 .contacts-nav-link:hover,
 .contacts-nav-link:focus {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   color: var(--animation-color);
 }
 
@@ -174,6 +211,10 @@ p {
 
 .contact-link-tel:hover,
 .contact-link-tel:focus {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   color: var(--animation-color);
 }
 
@@ -240,6 +281,10 @@ h1 {
 }
 .button:hover,
 .button:focus {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   background-color: var(--animation-botton-color);
 }
 
@@ -479,6 +524,10 @@ h3 {
 
 .network-link:hover,
 .network-link:focus {
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   color: var(--main-header-color);
   background-color: var(--animation-color);
 }
@@ -520,6 +569,10 @@ h3 {
 
 .client-list-link:hover,
 .client-list-link:focus {
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   color: var(--animation-color);
   border-color: var(--animation-color);
 }
@@ -650,11 +703,70 @@ address {
 
 .network:hover,
 .network:focus {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   background-color: var(--animation-color);
 }
 
 .footer-network-item:not(:last-child) {
   margin-right: 10px;
+}
+
+/* -----------------------------------------Модальное окно и оверлей ------------------------------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  padding: 8px;
+
+  background-color: var(--main-header-color);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.close-btn {
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  background-color: var(--main-header-color);
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+.close-img {
+  width: 11px;
+  height: 11px;
 }
 
 /* ---------------------------------    Стили к portfolio.html   --------------------------------- */
@@ -688,6 +800,10 @@ address {
 
 .filter-button:hover,
 .filter-button:focus {
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   background-color: var(--animation-color);
   color: var(--main-header-color);
 
@@ -711,27 +827,44 @@ address {
   margin-left: var(--indent-30px);
 }
 
+.gallery-box {
+  padding: 20px 24px;
+}
+
 .gallery-item:hover {
   box-sizing: border-box;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.gallery-box {
-  padding: 20px 24px;
+.gallery-item:hover .gallery-box {
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 }
 
-.img-box {
-  position: relative;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+.gallery-item:hover .img-paragraph {
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+  transform: translateY(0%);
 }
 
-.img-box::before {
+.img-box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* .img-box::before {
   content: '';
   display: inline-block;
   position: absolute;
@@ -739,28 +872,31 @@ address {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
-}
+} */
+/* .img-box:hover::before {
+  opacity: 1;
+} */
+
+/* .img-box:hover .img-paragraph {
+  opacity: 1;
+} */
 
 .img-paragraph {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 328px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transform: translateY(100%);
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform 250ms linear;
+  padding: 63px 24px;
 
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.03em;
   color: var(--main-header-color);
-}
-
-.img-box:hover::before {
-  opacity: 1;
-}
-
-.img-box:hover .img-paragraph {
-  opacity: 1;
 }
 
 .gallery-item .img {
